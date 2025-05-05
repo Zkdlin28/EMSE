@@ -46,44 +46,44 @@ let experiment_configuration_function = (writer) => {
         task_configuration: (t) => {
             const examples = [
                 {
-                    code: `let x = 0;\nfor (let i = 0; i < 3; i++) {\n  x++;\n}\nconsole.log(x);`,
-                    answer: "3"
+                    code: `function berechneSummeVonGeradenZahlenBis(obergrenze) {\n  let summe = 0;\n  for (let zaehler = 1; zaehler <= obergrenze; zaehler++) {\n    if (zaehler % 2 === 0) {\n      summe += zaehler;\n    }\n  }\n  return summe;\n}\nberechneSummeVonGeradenZahlenBis(6);`,
+                    answer: "12"
                 },
                 {
-                    code: `let sum = 0;\nfor (let i = 1; i <= 3; i++) {\n  sum += i;\n}\nconsole.log(sum);`,
-                    answer: "6"
+                    code: `function f(n) {\n  let s = 0;\n  for (let i = 1; i <= n; i++) {\n    if (i % 2 === 0) {\n      s += i;\n    }\n  }\n  return s;\n}\nf(6);`,
+                    answer: "12"
                 },
                 {
-                    code: `let v = 5;\nif (v > 3) {\n  v -= 2;\n}\nconsole.log(v);`,
-                    answer: "3"
-                },
-                {
-                    code: `let n = 4;\nif (n % 2 == 0) {\n  n /= 2;\n}\nconsole.log(n);`,
-                    answer: "2"
-                },
-                {
-                    code: `let c = 0;\nfor (let i = 0; i < 5; i++) {\n  if (i % 2 === 0) c++;\n}\nconsole.log(c);`,
-                    answer: "3"
-                },
-                {
-                    code: `let y = 1;\nfor (let i = 0; i < 2; i++) {\n  y += 2;\n}\nconsole.log(y);`,
-                    answer: "5"
-                },
-                {
-                    code: `let a = 7;\nif (a < 10) {\n  a -= 4;\n}\nconsole.log(a);`,
-                    answer: "3"
-                },
-                {
-                    code: `let p = 0;\nfor (let j = 0; j < 4; j++) {\n  p += 1;\n}\nconsole.log(p);`,
+                    code: `function zaehleTeilerVon(zahl) {\n  let teilerAnzahl = 0;\n  for (let teiler = 1; teiler <= zahl; teiler++) {\n    if (zahl % teiler === 0) {\n      teilerAnzahl++;\n    }\n  }\n  return teilerAnzahl;\n}\nzaehleTeilerVon(6);`,
                     answer: "4"
                 },
                 {
-                    code: `let b = 6;\nif (b % 3 == 0) {\n  b = b / 2;\n}\nconsole.log(b);`,
-                    answer: "3"
+                    code: `function t(z) {\n  let c = 0;\n  for (let i = 1; i <= z; i++) {\n    if (z % i === 0) {\n      c++;\n    }\n  }\n  return c;\n}\nt(6);`,
+                    answer: "4"
                 },
                 {
-                    code: `let v = 3;\nif (v > 2) {\n  v += 2;\n}\nconsole.log(v);`,
-                    answer: "5"
+                    code: `function findeMaximum(wert1, wert2, wert3) {\n  if (wert1 >= wert2 && wert1 >= wert3) return wert1;\n  if (wert2 >= wert1 && wert2 >= wert3) return wert2;\n  return wert3;\n}\nfindeMaximum(5, 9, 4);`,
+                    answer: "9"
+                },
+                {
+                    code: `function m(x, y, z) {\n  if (x >= y && x >= z) return x;\n  if (y >= x && y >= z) return y;\n  return z;\n}\nm(5, 9, 4);`,
+                    answer: "9"
+                },
+                {
+                    code: `function berechneFakultaet(grenzwert) {\n  let produkt = 1;\n  for (let faktor = 1; faktor <= grenzwert; faktor++) {\n    produkt *= faktor;\n  }\n  return produkt;\n}\nberechneFakultaet(4);`,
+                    answer: "24"
+                },
+                {
+                    code: `function f(n) {\n  let p = 1;\n  for (let i = 1; i <= n; i++) {\n    p *= i;\n  }\n  return p;\n}\nf(4);`,
+                    answer: "24"
+                },
+                {
+                    code: `function gibGroesserenWertZurueck(eingabe1, eingabe2) {\n  if (eingabe1 > eingabe2) return eingabe1;\n  return eingabe2;\n}\ngibGroesserenWertZurueck(7, 3);`,
+                    answer: "7"
+                },
+                {
+                    code: `function g(x, y) {\n  if (x > y) return x;\n  return y;\n}\ng(7, 3);`,
+                    answer: "7"
                 }
             ];
 
